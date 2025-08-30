@@ -2,7 +2,7 @@
 
 **Real-time, resource-constrained logistics optimization for developing regions**
 
-AlgoLogiX addresses critical logistics challenges in Africa, Asia, and other developing regions where traditional route optimization fails due to unpredictable constraints like fuel shortages, poor road conditions, weather disruptions, and sudden demand spikes.
+AlgoLogiX addresses critical logistics challenges in Africa, Asia, and other developing regions where traditional route optimization fails due to unpredictable constraints like fuel shortages, poor road conditions, weather disruptions, and sudden demand spikes. **Project built for the [AlgoFest Hackathon](https://algofest-hackathon.devpost.com/)**
 
 ## Core Innovation
 
@@ -94,7 +94,7 @@ Perfect for:
 cd backend
 python -m pytest tests/ -v
 
-# Frontend tests (if implemented)
+# Frontend tests
 cd frontend
 npm test
 ```
