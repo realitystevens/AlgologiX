@@ -3,7 +3,7 @@ import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import Vehicles from './pages/Vehicles'
 import Deliveries from './pages/Deliveries'
-import { Routes as RoutesPage } from './pages/Routes'
+import RoutesPage from './pages/Routes'
 import Events from './pages/Events'
 
 function App() {
