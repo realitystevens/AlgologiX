@@ -86,3 +86,6 @@ coverage-summary.json
 # Misc
 *.tgz
 *.tsbuildinfo
+
+
+notes.md
