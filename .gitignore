@@ -41,13 +41,6 @@ htmlcov/
 # Mypy
 .mypy_cache/
 
-# Pydantic
-*.json
-
-# Static/media files (customize as needed)
-staticfiles/
-media/
-
 # dotenv
 .env
 .env.*
