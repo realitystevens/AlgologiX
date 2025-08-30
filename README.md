@@ -4,6 +4,9 @@
 
 AlgoLogiX addresses critical logistics challenges in Africa, Asia, and other developing regions where traditional route optimization fails due to unpredictable constraints like fuel shortages, poor road conditions, weather disruptions, and sudden demand spikes. **Project built for the [AlgoFest Hackathon](https://algofest-hackathon.devpost.com/)**
 
+URL to Backend - [algologix-api.vercel.app/](https://algologix-api.vercel.app/)
+URL to Frontend - [algologix.vercel.app/](https://algologix.vercel.app/)
+
 ## Core Innovation
 
 Unlike static routing algorithms (Dijkstra, A\*), AlgoLogiX combines multiple world-class algorithmic approaches:
@@ -101,5 +104,5 @@ npm test
 
 ## Documentation
 
-- [API Documentation](http://localhost:8000/docs) - Interactive Swagger docs
+- [API Documentation](https://algologix-api.vercel.app/docs) - Interactive Swagger docs
 - [Algorithm Details](algorithms.md) - Deep dive into implementations

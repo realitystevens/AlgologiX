@@ -43,7 +43,6 @@ htmlcov/
 
 # dotenv
 .env
-.env.*
 
 # Build
 build/
