@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import { graphAPI, resilienceAPI, routeAPI } from '../services/api'
-import { Network, Zap, Route, TrendingUp } from 'lucide-react'
+import { Network, Zap, Navigation, TrendingUp } from 'lucide-react'
 
 export default function Dashboard() {
   const [graphLoaded, setGraphLoaded] = useState(false)
@@ -113,7 +113,7 @@ export default function Dashboard() {
               variant="secondary"
               size="lg"
             >
-              <Route className="h-4 w-4 mr-2" />
+              <Navigation className="h-4 w-4 mr-2" />
               Compute Initial Routes
             </Button>
             
@@ -177,7 +177,7 @@ export default function Dashboard() {
           <Card.Body>
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Route className="h-8 w-8 text-purple-600" />
+                <Navigation className="h-8 w-8 text-purple-600" />
               </div>
               <div className="ml-5 w-0 flex-1">
                 <dl>

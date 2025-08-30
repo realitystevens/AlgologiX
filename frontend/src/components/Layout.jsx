@@ -3,7 +3,7 @@ import {
   LayoutDashboard, 
   Truck, 
   Package, 
-  Route, 
+  MapPin, 
   AlertTriangle,
   Network
 } from 'lucide-react'
@@ -13,7 +13,7 @@ const navigation = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
   { name: 'Vehicles', href: '/vehicles', icon: Truck },
   { name: 'Deliveries', href: '/deliveries', icon: Package },
-  { name: 'Routes', href: '/routes', icon: Route },
+  { name: 'Routes', href: '/routes', icon: MapPin },
   { name: 'Events', href: '/events', icon: AlertTriangle },
 ]
 

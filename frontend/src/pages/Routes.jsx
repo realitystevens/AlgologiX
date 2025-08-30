@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import { routeAPI } from '../services/api'
-import { Route, Zap, MapPin, Clock } from 'lucide-react'
+import { Navigation, Zap, MapPin, Clock } from 'lucide-react'
 
 export default function Routes() {
   const [routes, setRoutes] = useState({})
@@ -55,7 +55,7 @@ export default function Routes() {
             loading={initialRouteMutation.isPending}
             variant="secondary"
           >
-            <Route className="h-4 w-4 mr-2" />
+            <Navigation className="h-4 w-4 mr-2" />
             Compute Initial Routes
           </Button>
           <Button
@@ -130,7 +130,7 @@ export default function Routes() {
                 <Card.Header>
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-medium text-gray-900 flex items-center">
-                      <Route className="h-5 w-5 mr-2 text-blue-600" />
+                      <Navigation className="h-5 w-5 mr-2 text-blue-600" />
                       {vehicleId}
                     </h3>
                     <div className="flex items-center space-x-4 text-sm text-gray-500">
@@ -197,7 +197,7 @@ export default function Routes() {
         <Card>
           <Card.Body>
             <div className="text-center py-12">
-              <Route className="h-12 w-12 mx-auto text-gray-400" />
+              <Navigation className="h-12 w-12 mx-auto text-gray-400" />
               <h3 className="mt-2 text-sm font-medium text-gray-900">No routes computed</h3>
               <p className="mt-1 text-sm text-gray-500">
                 Start by computing initial routes or use adaptive recomputation.
@@ -208,7 +208,7 @@ export default function Routes() {
                   loading={initialRouteMutation.isPending}
                   variant="secondary"
                 >
-                  <Route className="h-4 w-4 mr-2" />
+                  <Navigation className="h-4 w-4 mr-2" />
                   Compute Initial Routes
                 </Button>
                 <Button
