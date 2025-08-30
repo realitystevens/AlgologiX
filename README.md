@@ -23,20 +23,20 @@ Unlike static routing algorithms (Dijkstra, A\*), AlgoLogiX combines multiple wo
 
 ## Architecture
 
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│  React Frontend │────│   FastAPI Backend │────│  Algorithm Core │
-│                 │    │                  │    │                 │
-│ • Dashboard     │    │ • REST API       │    │ • ACO/GA        │
-│ • Vehicle Mgmt  │    │ • State Store    │    │ • Q-Learning    │
-│ • Route Viz     │    │ • Event System   │    │ • NetworkX      │
-│ • Event Sim     │    │ • Resilience     │    │ • VRP Solver    │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-```
+| **React Frontend** | **FastAPI Backend** | **Algorithm Core** |
+| ------------------ | ------------------- | ------------------ |
+| • Dashboard        | • REST API          | • ACO/GA           |
+| • Vehicle Mgmt     | • State Store       | • Q-Learning       |
+| • Route Viz        | • Event System      | • NetworkX         |
+| • Event Sim        | • Resilience        | • VRP Solver       |
 
-**Backend**: FastAPI + NetworkX + ACO/GA/RL algorithms  
-**Frontend**: React dashboard with real-time visualization  
-**State Management**: In-memory store with modular, swappable components
+**Data Flow**: Frontend ↔ Backend API ↔ Algorithm Engine
+
+**Tech Stack**:
+
+- **Backend**: FastAPI + NetworkX + ACO/GA/RL algorithms
+- **Frontend**: React dashboard with real-time visualization
+- **State Management**: In-memory store with modular, swappable components
 
 ## Impact
 
@@ -102,6 +102,4 @@ npm test
 ## Documentation
 
 - [API Documentation](http://localhost:8000/docs) - Interactive Swagger docs
-- [Algorithm Details](docs/algorithms.md) - Deep dive into implementations
-- [Deployment Guide](docs/deployment.md) - Production deployment
-- [Research Paper](docs/research.md) - Academic background and citations
+- [Algorithm Details](algorithms.md) - Deep dive into implementations
