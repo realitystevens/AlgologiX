@@ -1,5 +1,6 @@
 import networkx as nx
-import numpy as np
+import random
+import math
 from dataclasses import dataclass
 from typing import Dict, List
 from app.models.schemas import GraphLoadRequest
@@ -16,7 +17,7 @@ class GraphService:
 
     def load_graph(self, req: GraphLoadRequest):
         if req.mode == "synthetic":
-            np.random.seed(req.seed)
+            random.seed(req.seed)
             G = nx.random_geometric_graph(req.n_nodes, radius=0.25)
             # ensure connectivity by adding a spanning tree if needed
             if not nx.is_connected(G):
@@ -28,9 +29,9 @@ class GraphService:
             # assign weights as Euclidean distances
             pos = nx.get_node_attributes(G, 'pos')
             for u, v in G.edges:
-                du = np.array(pos[u])
-                dv = np.array(pos[v])
-                dist = float(np.linalg.norm(du - dv))
+                du = pos[u]
+                dv = pos[v]
+                dist = math.sqrt((du[0] - dv[0])**2 + (du[1] - dv[1])**2)
                 G.edges[u, v]['weight'] = dist
             self.db.G = G
         else:
