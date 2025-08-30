@@ -2,7 +2,7 @@
 
 Dashboard for the AlgoLogiX adaptive logistics optimizer. Provides a web interface to interact with the backend and visualize the optimization algorithms in action. Built using React.js.
 
-URL to Backend - [algologix.vercel.app/](https://algologix.vercel.app/)
+URL to Frontend - [algologi-x.vercel.app/](https://algologi-x.vercel.app/)
 
 ## Features
 

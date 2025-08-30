@@ -5,7 +5,7 @@
 AlgoLogiX addresses critical logistics challenges in Africa, Asia, and other developing regions where traditional route optimization fails due to unpredictable constraints like fuel shortages, poor road conditions, weather disruptions, and sudden demand spikes. **Project built for the [AlgoFest Hackathon](https://algofest-hackathon.devpost.com/)**
 
 URL to Backend - [algologix-api.vercel.app/](https://algologix-api.vercel.app/)
-URL to Frontend - [algologix.vercel.app/](https://algologix.vercel.app/)
+URL to Frontend - [algologi-x.vercel.app/](https://algologi-x.vercel.app/)
 
 ## Core Innovation
 
