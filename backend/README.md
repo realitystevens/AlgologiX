@@ -2,7 +2,7 @@
 
 FastAPI service that implements the AlgoLogiX idea: initial shortest-path routing, adaptive re-routing with **Ant Colony Optimization (ACO)** and **Genetic Algorithm (GA)** heuristics, a simple **Q-Learning** feedback loop, and a **Resilience Score**. Uses **NetworkX** for graph ops. Includes a lightweight in-memory state store and clean modular architecture so users can swap components later.
 
-URL to Backend - [algologix-api.vercel.app/](https://algologix-api.vercel.app/)
+URL to Backend - [algologix-api.onrender.com/](https://algologix-api.onrender.com/)
 
 ## Features:
 
