@@ -44,7 +44,8 @@
     ],
     "functions": {
         "index.py": {
-            "maxDuration": 30
+            "maxDuration": 30,
+            "memory": 512
         }
     }
 }
