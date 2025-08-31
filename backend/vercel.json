@@ -6,7 +6,33 @@
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "50mb",
-                "excludeFiles": ["tests/**", "*.md", ".env*", "__pycache__/**", "*.pyc"]
+                "excludeFiles": [
+                    "tests/**", 
+                    "*.md", 
+                    ".env*", 
+                    "__pycache__/**", 
+                    "*.pyc",
+                    "*.pyo",
+                    "*.pyd",
+                    ".pytest_cache/**",
+                    ".coverage",
+                    ".mypy_cache/**",
+                    ".DS_Store",
+                    "*.log",
+                    "demo.py",
+                    "algologix_backend.egg-info/**",
+                    ".git/**",
+                    ".gitignore",
+                    "README.md",
+                    "algorithms.md",
+                    "pyproject.toml",
+                    "*.ipynb",
+                    ".vscode/**",
+                    ".idea/**",
+                    "*.swp",
+                    "*.swo",
+                    "*~"
+                ]
             }
         }
     ],

@@ -12,3 +12,14 @@ __pycache__/
 *.log
 demo.py
 algologix_backend.egg-info/
+.git/
+.gitignore
+README.md
+algorithms.md
+pyproject.toml
+*.ipynb
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
