@@ -4,38 +4,27 @@ import toast from 'react-hot-toast'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import { eventAPI } from '../services/api'
+import { getEventData } from '../utils/mockData'
 import { AlertTriangle, Fuel, Package, Zap, Plus, Clock } from 'lucide-react'
 
-const EVENT_TYPES = [
-  {
-    type: 'road_block',
-    label: 'Road Block',
-    icon: AlertTriangle,
-    color: 'red',
-    description: 'Block a road connection between two nodes'
-  },
-  {
-    type: 'fuel_shortage',
-    label: 'Fuel Shortage',
-    icon: Fuel,
-    color: 'orange',
-    description: 'Reduce fuel capacity of a vehicle'
-  },
-  {
-    type: 'new_order',
-    label: 'New Order',
-    icon: Package,
-    color: 'blue',
-    description: 'Add a new delivery job'
+// Helper function to map icon names to components
+const getIconComponent = (iconName) => {
+  const iconMap = {
+    AlertTriangle,
+    Fuel,
+    Package,
+    Zap,
+    Plus,
+    Clock
   }
-]
+  return iconMap[iconName] || AlertTriangle
+}
 
 export default function Events() {
+  const { eventTypes: EVENT_TYPES, newEventTemplate } = getEventData()
+  
   const [eventHistory, setEventHistory] = useState([])
-  const [newEvent, setNewEvent] = useState({
-    type: 'road_block',
-    payload: {}
-  })
+  const [newEvent, setNewEvent] = useState(newEventTemplate)
   
   const queryClient = useQueryClient()
 
@@ -52,10 +41,7 @@ export default function Events() {
       queryClient.invalidateQueries(['resilience'])
       
       // Reset form
-      setNewEvent({
-        type: 'road_block',
-        payload: {}
-      })
+      setNewEvent({ ...newEventTemplate })
     },
     onError: (error) => {
       toast.error('Failed to post event: ' + error.message)
@@ -246,7 +232,7 @@ export default function Events() {
             <label className="block text-sm font-medium text-gray-700 mb-3">Event Type</label>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {EVENT_TYPES.map((eventType) => {
-                const Icon = eventType.icon
+                const Icon = getIconComponent(eventType.icon)
                 const isSelected = newEvent.type === eventType.type
                 return (
                   <button
@@ -308,7 +294,7 @@ export default function Events() {
             <div className="space-y-4">
               {eventHistory.map((event) => {
                 const eventType = EVENT_TYPES.find(t => t.type === event.type)
-                const Icon = eventType?.icon || AlertTriangle
+                const Icon = getIconComponent(eventType?.icon || 'AlertTriangle')
                 
                 return (
                   <div key={event.id} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
@@ -347,7 +333,7 @@ export default function Events() {
         <Card.Body>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {EVENT_TYPES.map((eventType) => {
-              const Icon = eventType.icon
+              const Icon = getIconComponent(eventType.icon)
               const count = eventHistory.filter(e => e.type === eventType.type).length
               
               return (

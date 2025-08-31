@@ -4,20 +4,14 @@ import toast from 'react-hot-toast'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import { vehicleAPI } from '../services/api'
+import { getVehicleData } from '../utils/mockData'
 import { Truck, Plus, Trash2 } from 'lucide-react'
 
 export default function Vehicles() {
-  const [vehicles, setVehicles] = useState([
-    { id: 'v1', start_node: 0, fuel_capacity: 100, load_capacity: 10 },
-    { id: 'v2', start_node: 1, fuel_capacity: 100, load_capacity: 10 },
-  ])
-
-  const [newVehicle, setNewVehicle] = useState({
-    id: '',
-    start_node: 0,
-    fuel_capacity: 100,
-    load_capacity: 10
-  })
+  const { defaultVehicles, newVehicleTemplate } = getVehicleData()
+  
+  const [vehicles, setVehicles] = useState(defaultVehicles)
+  const [newVehicle, setNewVehicle] = useState(newVehicleTemplate)
 
   const registerVehiclesMutation = useMutation({
     mutationFn: vehicleAPI.registerVehicles,
@@ -41,7 +35,7 @@ export default function Vehicles() {
     }
 
     setVehicles([...vehicles, { ...newVehicle }])
-    setNewVehicle({ id: '', start_node: 0, fuel_capacity: 100, load_capacity: 10 })
+    setNewVehicle({ ...newVehicleTemplate })
     toast.success('Vehicle added')
   }
 

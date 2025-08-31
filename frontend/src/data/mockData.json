@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "resilienceHistory": [
+      { "time": "10:00", "score": 0.85 },
+      { "time": "10:05", "score": 0.82 },
+      { "time": "10:10", "score": 0.78 },
+      { "time": "10:15", "score": 0.81 },
+      { "time": "10:20", "score": 0.75 }
+    ],
+    "routeStats": [
+      { "name": "Vehicle 1", "routes": 3, "cost": 12.5 },
+      { "name": "Vehicle 2", "routes": 2, "cost": 8.3 },
+      { "name": "Vehicle 3", "routes": 4, "cost": 15.2 }
+    ]
+  },
+  "vehicles": {
+    "defaultVehicles": [
+      { "id": "v1", "start_node": 0, "fuel_capacity": 100, "load_capacity": 4 },
+      { "id": "v2", "start_node": 1, "fuel_capacity": 100, "load_capacity": 5 }
+    ],
+    "newVehicleTemplate": {
+      "id": "",
+      "start_node": 0,
+      "fuel_capacity": 100,
+      "load_capacity": 4
+    }
+  },
+  "deliveries": {
+    "defaultDeliveries": [
+      { "id": "d1", "node": 5, "demand": 2.0, "deadline": null },
+      { "id": "d2", "node": 10, "demand": 2.0, "deadline": null },
+      { "id": "d3", "node": 15, "demand": 2.0, "deadline": null }
+    ],
+    "newDeliveryTemplate": {
+      "id": "",
+      "node": 0,
+      "demand": 1.0,
+      "deadline": null
+    }
+  },
+  "events": {
+    "eventTypes": [
+      {
+        "type": "road_block",
+        "label": "Road Block",
+        "icon": "AlertTriangle",
+        "color": "red",
+        "description": "Block a road connection between two nodes"
+      },
+      {
+        "type": "fuel_shortage",
+        "label": "Fuel Shortage",
+        "icon": "Fuel",
+        "color": "orange",
+        "description": "Reduce fuel capacity of a vehicle"
+      },
+      {
+        "type": "new_order",
+        "label": "New Order",
+        "icon": "Package",
+        "color": "blue",
+        "description": "Add a new delivery job"
+      }
+    ],
+    "newEventTemplate": {
+      "type": "road_block",
+      "payload": {}
+    }
+  },
+  "graph": {
+    "defaultSettings": {
+      "mode": "synthetic",
+      "n_nodes": 50,
+      "seed": 42
+    }
+  }
+}

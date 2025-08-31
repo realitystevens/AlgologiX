@@ -4,21 +4,14 @@ import toast from 'react-hot-toast'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import { deliveryAPI } from '../services/api'
+import { getDeliveryData } from '../utils/mockData'
 import { Package, Plus, Trash2 } from 'lucide-react'
 
 export default function Deliveries() {
-  const [deliveries, setDeliveries] = useState([
-    { id: 'd1', node: 5, demand: 2.0, deadline: null },
-    { id: 'd2', node: 10, demand: 2.0, deadline: null },
-    { id: 'd3', node: 15, demand: 2.0, deadline: null },
-  ])
-
-  const [newDelivery, setNewDelivery] = useState({
-    id: '',
-    node: 0,
-    demand: 1.0,
-    deadline: null
-  })
+  const { defaultDeliveries, newDeliveryTemplate } = getDeliveryData()
+  
+  const [deliveries, setDeliveries] = useState(defaultDeliveries)
+  const [newDelivery, setNewDelivery] = useState(newDeliveryTemplate)
 
   const registerDeliveriesMutation = useMutation({
     mutationFn: deliveryAPI.registerDeliveries,
@@ -42,7 +35,7 @@ export default function Deliveries() {
     }
 
     setDeliveries([...deliveries, { ...newDelivery }])
-    setNewDelivery({ id: '', node: 0, demand: 1.0, deadline: null })
+    setNewDelivery({ ...newDeliveryTemplate })
     toast.success('Delivery added')
   }
 

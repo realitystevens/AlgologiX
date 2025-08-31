@@ -5,6 +5,7 @@ import toast from 'react-hot-toast'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import { graphAPI, resilienceAPI, routeAPI } from '../services/api'
+import { getDashboardData, getGraphData, updateResilienceHistory } from '../utils/mockData'
 import { Network, Zap, Navigation, TrendingUp } from 'lucide-react'
 
 export default function Dashboard() {
@@ -57,27 +58,17 @@ export default function Dashboard() {
   })
 
   const handleLoadGraph = () => {
-    loadGraphMutation.mutate({
-      mode: 'synthetic',
-      n_nodes: 50,
-      seed: 42
-    })
+    const graphSettings = getGraphData()
+    loadGraphMutation.mutate(graphSettings)
   }
 
-  // Mock data for charts
-  const resilienceHistory = [
-    { time: '10:00', score: 0.85 },
-    { time: '10:05', score: 0.82 },
-    { time: '10:10', score: 0.78 },
-    { time: '10:15', score: 0.81 },
-    { time: '10:20', score: resilienceData?.data?.score || 0.75 },
-  ]
-
-  const routeStats = [
-    { name: 'Vehicle 1', routes: 3, cost: 12.5 },
-    { name: 'Vehicle 2', routes: 2, cost: 8.3 },
-    { name: 'Vehicle 3', routes: 4, cost: 15.2 },
-  ]
+  // Get mock data
+  const { resilienceHistory: baseResilienceHistory, routeStats } = getDashboardData()
+  
+  // Update resilience history with real data if available
+  const resilienceHistory = resilienceData?.data?.score 
+    ? updateResilienceHistory(resilienceData.data.score)
+    : baseResilienceHistory
 
   return (
     <div className="space-y-6">
