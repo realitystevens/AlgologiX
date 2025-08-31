@@ -76,8 +76,8 @@ export default function Dashboard() {
       <div>
         <h1 className="text-3xl font-bold text-gray-900">AlgoLogiX Dashboard</h1>
         <p className="mt-2 text-gray-600">
-          Adaptive logistics optimization with Ant Colony Optimization (ACO), Genetic Algorithm (GA), and Q-Learning (Reinforcement Learning). 
-          Quickly finds the best delivery routes and adjusts them on the go (in real time), even when there are limits like fuel shortages, traffic jams, or fewer vehicles
+          Adaptive logistics optimization with Ant Colony Optimization (ACO), Genetic Algorithm (GA), and Q-Learning (Reinforcement Learning). <br />
+          Quickly finds the best delivery routes and adjusts them on the go (in real time), even when there are limits like fuel shortages, traffic jams, or fewer vehicles.
         </p>
       </div>
 
